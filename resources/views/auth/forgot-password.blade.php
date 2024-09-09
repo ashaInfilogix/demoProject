@@ -37,7 +37,6 @@
             </div>
         </div>
     </section>
-
     <script>
         $(function() {
             $("form").validate({

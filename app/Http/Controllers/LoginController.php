@@ -74,7 +74,7 @@ class LoginController extends Controller
     public function verifyOtp(Request $request)
     {
         $request->validate([
-            'otp'   => 'required|max:4',
+            'otp'   => 'required',
             'email' => 'required'
         ]);
 

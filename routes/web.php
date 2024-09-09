@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/', function (){
     return redirect()->route('dashboard.index');
@@ -27,3 +28,8 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
     ]);
 });
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/get-products', [ProductController::Class, 'getProducts']);
+Route::get('/get-categories', [ProductController::class, 'getCategories']);
+Route::get('/get-subcategories', [ProductController::class, 'getSubcategories']);
