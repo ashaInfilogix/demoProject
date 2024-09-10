@@ -5,6 +5,8 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\CategoryController;
 
 Route::get('/', function (){
     return redirect()->route('dashboard.index');
@@ -30,6 +32,10 @@ Route::middleware(['auth', 'auth.session'])->group(function () {
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/main', [ProductController::class, 'main'])->name('main');
 Route::get('/get-products', [ProductController::Class, 'getProducts']);
 Route::get('/get-categories', [ProductController::class, 'getCategories']);
 Route::get('/get-subcategories', [ProductController::class, 'getSubcategories']);
+
+Route::get('/categories', [CategoryController::class, 'index']);
+Route::get('/product-data', [MainController::class, 'index']);

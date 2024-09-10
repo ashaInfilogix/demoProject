@@ -2,6 +2,7 @@ import './bootstrap';
 import { createApp, ref } from 'vue';
 import UserProfile from './components/UserProfile.vue';
 import ProductList from './components/ProductList.vue';
+import Main from './components/Main.vue';
 
 const app = createApp({
     components: {
@@ -19,5 +20,7 @@ const app = createApp({
 });
 
 app.component('product-list', ProductList);
+app.component('main-component', Main);
+
 
 app.mount('#app');
